@@ -1,0 +1,46 @@
+name: expense_tracker
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Local database
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Secure storage (store Hive key, PIN, etc.)
+  flutter_secure_storage: ^8.0.0
+
+  # Local authentication (fingerprint, FaceID, etc.)
+  local_auth: ^2.1.0
+
+  # Helpers
+  uuid: ^3.0.7
+  provider: ^6.0.5
+  intl: ^0.18.0
+
+  # Charts
+  fl_chart: ^0.60.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Code generation for Hive models
+  hive_generator: ^2.0.0
+  build_runner: ^2.3.3
+  analyzer: 6.4.1
+  # Linting rules
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
