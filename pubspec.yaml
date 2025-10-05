@@ -29,7 +29,7 @@ dependencies:
   intl: ^0.18.0
 
   # Charts
-  fl_chart: ^0.60.0
+  fl_chart: ^0.70.0
 
 dev_dependencies:
   flutter_test:

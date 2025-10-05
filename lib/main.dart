@@ -3,18 +3,19 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'models/expense.dart';
 import 'models/category.dart';
 import 'pages/home_page.dart';
+import 'pages/dashboard_page.dart';
+import 'pages/add_expense_page.dart';
+import 'pages/expenses_page.dart';
+import 'pages/category_page.dart';
+import 'pages/profile_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Initialize Hive
   await Hive.initFlutter();
 
-  // Register adapters
   Hive.registerAdapter(ExpenseAdapter());
   Hive.registerAdapter(CategoryAdapter());
 
-  // Open boxes
   await Hive.openBox<Expense>('expenses');
   await Hive.openBox<Category>('categories');
 
@@ -29,7 +30,16 @@ class ExpenseApp extends StatelessWidget {
     return MaterialApp(
       title: 'Expense Tracker',
       theme: ThemeData(primarySwatch: Colors.teal),
-      home: const HomePage(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        '/dashboard': (context) => const DashboardPage(),
+        '/expenses': (context) => const ExpensesPage(),
+        '/add': (context) => const AddExpensePage(),
+        '/categories': (context) => const CategoryPage(),
+        '/profile': (context) => const ProfilePage(),
+      },
     );
   }
 }
